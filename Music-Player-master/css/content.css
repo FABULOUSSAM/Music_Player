@@ -1,0 +1,292 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color .5s;
+    font-family: 'Oswald', sans-serif;
+}
+  
+#outer0 {
+    width: 70rem;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 2rem;
+}
+  
+#left-button0 ,#right-button0 {
+    float: left;
+    width: 30px;
+    text-align: center;
+    position: relative;
+    top: 5rem;
+    cursor: pointer;
+}
+
+#inner0:first-child {
+    margin-left: 0;
+}
+  
+.hide {
+    display: none;
+}
+ /* Second */
+#outer1 {
+    width: 70rem;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 2rem;
+}
+  
+#left-button1 ,#right-button1 {
+    float: left;
+    width: 30px;
+    text-align: center;
+    position: relative;
+    top: 5rem;
+    cursor: pointer;
+}
+
+#inner1 img{
+    border-radius: 7rem;
+}
+
+#inner1:first-child {
+    margin-left: 0;
+}
+
+/* Third */
+#outer2 {
+    width: 70rem;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 2rem;
+}
+  
+#left-button2 ,#right-button2 {
+    float: left;
+    width: 30px;
+    text-align: center;
+    position: relative;
+    top: 5rem;
+    cursor: pointer;
+}
+
+#inner2:first-child {
+    margin-left: 0;
+}
+  
+.hide {
+    display: none;
+}
+
+/* Card */
+.card{
+    width: 15vw !important;
+    display: inline-block;
+    margin: 1.3rem;
+    overflow: hidden;
+    /* background-color: grey; */
+}
+
+.card img{
+    width: 15vw;
+    height: 15vw;
+    border-radius: 0.5rem;
+}
+
+.card-text{
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-top: 10px;
+}
+
+.card-text1{
+    font-size: 1rem;
+}
+
+/* Discover Categories*/
+table{
+    margin: 0px auto;
+}
+td{
+    padding: 3rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+h2{
+    display: inline-block;
+    margin:1rem 0 0 1rem;
+}
+
+.icon{
+    height: 1.1rem;
+    width: 1.1rem;
+    position: relative; top: 1px;
+}
+
+#dc1,#dc3{
+    border-right: 2px solid black;
+}
+#dc1,#dc2{
+    border-bottom: 2px solid black;
+}
+
+
+/* Phone Potrait */
+@media screen and (max-width:480px){
+    #right-button0,#left-button0{ display: none;}
+
+    #elem0{
+        margin-left: 1rem;
+    }
+
+    #outer0{
+        --cards:8;
+        --card-width: 38vw;
+        margin-left: 0;
+        max-width: calc(var(--cards)*var(--card-width));
+        overflow-x: auto;
+    }
+
+    #right-button1,#left-button1{ display: none;}
+
+    #elem1{
+        margin-left: 1rem;
+    }
+
+    #outer1{
+        --cards:8;
+        --card-width: 38vw;
+        margin-left: 0;
+        max-width: calc(var(--cards)*var(--card-width));
+        overflow-x: auto;
+    }
+
+    #right-button2,#left-button2{ display: none;}
+
+    #elem2{
+        margin-left: 1rem;
+    }
+
+    #outer2{
+        --cards:8;
+        --card-width: 38vw;
+        margin-left: 0;
+        max-width: calc(var(--cards)*var(--card-width));
+        overflow-x: auto;
+    }
+
+
+    .card{
+        width: 35vw !important;
+        display: inline-block;
+        margin: 1rem;
+    }
+
+    .card img{
+        width: 35vw;
+        height: 35vw;
+    }
+
+    .card-text{font-size: 1rem;}
+    .card-text1{font-size: 0.9rem;} 
+
+    td{
+        padding: 2rem;
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+
+    h2{
+        margin: 1rem;
+        font-size: 1.3rem !important;
+    }
+}
+
+
+/* Phone Landscape */
+@media screen and (max-height:480px){
+    #right-button0,#left-button0{ display: none;}
+
+    #elem0{
+        margin-left: 1rem;
+    }
+
+    #outer0{
+        --cards:8;
+        --card-width: 38vw;
+        margin-left: 0;
+        max-width: calc(var(--cards)*var(--card-width));
+        overflow-x: auto;
+    }
+
+    #right-button1,#left-button1{ display: none;}
+
+    #elem1{
+        margin-left: 1rem;
+    }
+
+    #outer1{
+        --cards:8;
+        --card-width: 38vw;
+        margin-left: 0;
+        max-width: calc(var(--cards)*var(--card-width));
+        overflow-x: auto;
+    }
+
+    #right-button2,#left-button2{ display: none;}
+
+    #elem2{
+        margin-left: 1rem;
+    }
+
+    #outer2{
+        --cards:8;
+        --card-width: 38vw;
+        margin-left: 0;
+        max-width: calc(var(--cards)*var(--card-width));
+        overflow-x: auto;
+    }
+
+    .card{
+        width: 35vw !important;
+        display: inline-block;
+        margin: 1rem;
+    }
+
+    .card img{
+        width: 35vw;
+        height: 35vw;
+    }
+
+    .card-text{font-size: 1rem;}
+    .card-text1{font-size: 0.9rem;} 
+
+    h2{
+        margin: 1rem;
+        font-size: 1.5rem;
+    }
+}
+
+/* Phone Landscape */
+
+/* Dont Know When I wrote This */
+
+/* @media screen and (max-height:480px){
+    .card{
+        width: 25vw !important;
+        display: inline-block;
+        margin: 1rem;
+    }
+
+    .card img{
+        width: 25vw;
+        height: 25vw;
+    }
+
+    .card-text{font-size: 1.2rem;}
+    .card-text1{font-size: 1rem;} 
+} */
+
+

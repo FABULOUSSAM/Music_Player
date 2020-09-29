@@ -1,0 +1,341 @@
+HTML
+
+<div id="elem1" style="display: flex;">
+        <label>
+          <input type="radio" />View</label>
+        <label>
+          <input type="radio" />All</label>
+        <label>
+          <input type="radio" />New</label>
+        <label>
+          <input type="radio" />Unread</label>
+        <label>
+          <input type="radio" />Favorites</label>
+        <label>
+          <input type="radio" />Bulk Print</label>
+        <label>
+          <input type="radio" />Bulk Save</label>
+        <label>
+          <input type="radio" />Save Library</label>
+      </div>
+     
+      <div id="elem2" style="display: flex;">
+        <label>
+          <input type="radio" />View</label>
+        <label>
+          <input type="radio" />All</label>
+        <label>
+          <input type="radio" />New</label>
+        <label>
+          <input type="radio" />Unread</label>
+        <label>
+          <input type="radio" />Favorites</label>
+        <label>
+          <input type="radio" />Bulk Print</label>
+        <label>
+          <input type="radio" />Bulk Save</label>
+        <label>
+          <input type="radio" />Save Library</label>
+      </div>
+
+JS
+
+$(function() {
+  var print = function(msg) {
+    alert(msg);
+  };
+
+  var setInvisible = function(elem) {
+    elem.css('visibility', 'hidden');
+  };
+  var setVisible = function(elem) {
+    elem.css('visibility', 'visible');
+  };
+
+  var elem = $("#elem1");
+  var items = elem.children();
+
+  // Inserting Buttons
+  elem.prepend('<div id="right-button1" style="visibility: hidden;"><a href="#"><</a></div>');
+  elem.append('  <div id="left-button1"><a href="#">></a></div>');
+
+  // Inserting Inner
+  items.wrapAll('<div id="inner1" />');
+
+  // Inserting Outer
+  
+  elem.find('#inner1').wrap('<div id="outer1"/>');
+
+  var outer = $('#outer1');
+
+  var updateUI = function() {
+    var maxWidth = outer.outerWidth(true);
+    var actualWidth = 0;
+    $.each($('#inner1 >'), function(i, item) {
+      actualWidth += $(item).outerWidth(true);
+    });
+
+    if (actualWidth <= maxWidth) {
+      setVisible($('#left-button1'));
+    }
+  };
+  updateUI();
+
+  $('#right-button1').click(function() {
+    var leftPos = outer.scrollLeft();
+    outer.animate({
+      scrollLeft: leftPos - 200
+    }, 800, function() {
+      
+      if ($('#outer1').scrollLeft() <= 0) {
+        setInvisible($('#right-button1'));
+      }
+    });
+  });
+
+  $('#left-button1').click(function() {
+    setVisible($('#right-button1'));
+    var leftPos = outer.scrollLeft();
+    outer.animate({
+      scrollLeft: leftPos + 200
+    }, 800);
+  });
+
+  $(window).resize(function() {
+    updateUI();
+  });
+});
+
+
+$(function() {
+  var print = function(msg) {
+    alert(msg);
+  };
+
+  var setInvisible = function(elem) {
+    elem.css('visibility', 'hidden');
+  };
+  var setVisible = function(elem) {
+    elem.css('visibility', 'visible');
+  };
+
+  var elem = $("#elem2");
+  var items = elem.children();
+
+  // Inserting Buttons
+  elem.prepend('<div id="right-button2" style="visibility: hidden;"><a href="#"><</a></div>');
+  elem.append('  <div id="left-button2"><a href="#">></a></div>');
+
+  // Inserting Inner
+  items.wrapAll('<div id="inner2" />');
+
+  // Inserting Outer
+  
+  elem.find('#inner2').wrap('<div id="outer2"/>');
+
+  var outer = $('#outer2');
+
+  var updateUI = function() {
+    var maxWidth = outer.outerWidth(true);
+    var actualWidth = 0;
+    $.each($('#inner2 >'), function(i, item) {
+      actualWidth += $(item).outerWidth(true);
+    });
+
+    if (actualWidth <= maxWidth) {
+      setVisible($('#left-button2'));
+    }
+  };
+  updateUI();
+
+  $('#right-button2').click(function() {
+    var leftPos = outer.scrollLeft();
+    outer.animate({
+      scrollLeft: leftPos - 200
+    }, 800, function() {
+      
+      if ($('#outer2').scrollLeft() <= 0) {
+        setInvisible($('#right-button2'));
+      }
+    });
+  });
+
+  $('#left-button2').click(function() {
+    setVisible($('#right-button2'));
+    var leftPos = outer.scrollLeft();
+    outer.animate({
+      scrollLeft: leftPos + 200
+    }, 800);
+  });
+
+  $(window).resize(function() {
+    updateUI();
+  });
+});
+
+CSS
+
+#outer1 {
+    /* display: inline-block;
+    float: left; */
+    width: 250px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  #left-button1 {
+    float: left;
+    width: 30px;
+    text-align: center;
+  }
+  
+  #right-button1 {
+    float: left;
+    width: 30px;
+    text-align: center;
+  }
+  
+  a {
+    text-decoration: none;
+    font-weight: bolder;
+    color: red;
+  }
+  
+  #inner1:first-child {
+    margin-left: 0;
+  }
+  
+  label {
+    margin-left: 10px;
+  }
+  
+  .hide {
+    display: none;
+  }
+
+  #outer2 {
+    /* display: inline-block;
+    float: left; */
+    width: 250px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  #left-button2 {
+    float: left;
+    width: 30px;
+    text-align: center;
+  }
+  
+  #right-button2 {
+    float: left;
+    width: 30px;
+    text-align: center;
+  }
+  
+  a {
+    text-decoration: none;
+    font-weight: bolder;
+    color: red;
+  }
+  
+  #inner2:first-child {
+    margin-left: 0;
+  }
+  
+  label {
+    margin-left: 10px;
+  }
+  
+  .hide {
+    display: none;
+  }
+ 
+
+ Phone Portrait CSS
+
+ /* Phone Portrait */
+@media screen and (max-width:480px){
+    
+    .side-nav-icon{
+        font-size: 1.4rem !important;
+    }
+    .navbar{
+        padding: 1rem;
+        height: 15rem;
+        background-image: url(https://i.pinimg.com/originals/3e/9f/ba/3e9fba059b756723d07498b63809b4c9.jpg);
+        background-size: 100vw 15rem;
+    }
+
+    .nav-item ul{
+        font-size: 1.2rem !important;
+        top: 1.2rem !important;
+    }
+
+    .searchbar{
+        position: absolute;
+        top: 4rem;
+        left: 5rem;
+    }
+
+    .search{
+        padding: 0.3rem 1vw 0.3rem 9vw !important;
+        border-radius: 1rem;
+        font-size: 1rem !important;
+        left: 0rem !important;
+        top: 1.2rem !important;
+    }
+
+    .nav-item .fa-search{
+        font-size: 1rem;
+        left: 25px !important; 
+        top: 1.8rem !important;
+    }
+
+    .nav-item .fa-user-circle{
+       font-size: 1.5rem !important;
+       margin-right: 2px;
+    }
+    .nav-item label{font-size: 1.1rem;top:-2px !important}
+    
+    #nav-item-2{
+        margin: 1.3rem !important;
+    }
+
+    .nav-item ul li{
+        margin-right: 1rem !important;
+    }
+
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+
+    h2{
+        margin: 1rem;
+        font-size: 1.3rem !important;
+    }
+}
+
+Modal Ajax
+
+var userdata = {'did':id};
+        $.ajax({
+            type: "POST",
+            url: "./all.php",
+            data:userdata, 
+            success: function(data){
+                var arr=data.split("\n");
+                // alert(data);
+                // var src=arr[4].substr(10);
+                var title=arr[6].substr(10);
+                var artist=arr[8].substr(10);
+                var category=arr[10].substr(10);
+                var release=arr[12].substr(10);
+                var duration=arr[14].substr(10);
+
+                $('#dtitle').innerHTML=title;
+                $('#dartist').innerHTML=artist;
+                $('#drelease').innerHTML=release;
+                $('#dduration').innerHTML=duration;
+                $('#dcategory').innerHTML=category;
+            }
+        });

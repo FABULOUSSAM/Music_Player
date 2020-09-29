@@ -1,0 +1,233 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color .5s;
+    font-family: 'Oswald', sans-serif;
+}
+
+/* Navigation Top Starts */
+
+.side-nav-icon{
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.nav-link, .see-all{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+.see-all{
+    float: right;
+    background-color: rgb(82, 255, 47);
+    padding: 6px 8px;
+    margin: 12px;
+    border-radius: 5px;
+}
+
+.navbar{
+    /* background-color: black; */
+    padding: 1rem;
+    height: 450px;
+    background-image: url(https://i.pinimg.com/originals/3e/9f/ba/3e9fba059b756723d07498b63809b4c9.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw 450px;
+}
+
+#nav-item-2{ margin: 2rem;}
+
+.nav-item ul{
+    color: white;
+    display: inline-flex;
+    position: absolute;
+    top: 1.3rem;
+    font-size: 1.5rem;
+}
+
+.nav-item ul li{ margin-right: 2rem;}
+
+.search{
+    padding: 0.4rem 4rem 0.4rem 2.8rem;
+    outline: none; border: none;
+    float: right;
+    border-radius: 1rem;
+    font-size: 1rem;
+    position: relative;
+    top: 0.6rem;
+    right: 10rem;
+}
+
+.nav-item .fa-search{
+    font-size: 1.3rem;
+    position: relative;
+    left: -8rem; top: 18px;
+}
+
+.nav-item .fa-user-circle{
+    font-size: 2.5rem;
+    color: white;
+    margin: 0.4rem 0.2rem;
+}
+.nav-item label{
+    color:white;
+    font-size: 1.5rem;
+    position: relative;
+    bottom: 5px;
+}
+/* Navigation Top Ends  */
+
+/* Navigation Side Starts */
+
+.sidenav {
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+  
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+  
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+  
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sub-menu{
+    background: linear-gradient( to right, #818181 2px, #111 2px );
+    margin-left: 3rem;
+}
+
+.sub-menu a{
+    font-size: 1.4rem;
+    padding-left: 1rem;
+}
+
+/* Navigation Side Ends */  
+
+/* Phone Portrait */
+@media screen and (max-width:480px){
+    
+    .side-nav-icon{
+        font-size: 1.4rem !important;
+    }
+    .navbar{
+        padding: 1rem;
+        height: 15rem;
+        background-image: url(https://i.pinimg.com/originals/3e/9f/ba/3e9fba059b756723d07498b63809b4c9.jpg);
+        background-size: 100vw 15rem;
+    }
+
+    .nav-item ul{
+        font-size: 1.2rem !important;
+        top: 1.2rem !important;
+    }
+
+    .searchbar{
+            position: absolute;
+            top: 4rem;
+            left: 5rem;
+        }
+
+    .search{
+        padding: 0.3rem 1vw 0.3rem 9vw;
+        padding-left: 9vw !important;
+        border-radius: 1rem;
+        font-size: 1rem !important;
+        left: 0rem !important;
+        top: 1.2rem !important;
+    }
+
+    .nav-item .fa-search{
+        font-size: 1rem;
+        left: 25px !important; 
+        top: 1.8rem !important;
+    }
+
+    .nav-item .fa-user-circle{
+       font-size: 1.5rem !important;
+       margin-right: 2px;
+    }
+    .nav-item label{font-size: 1.1rem;top:-2px !important;}
+    
+    #nav-item-2{
+        margin: 1.3rem;
+    }
+
+    .nav-item ul li{
+        margin-right: 1rem !important;
+    }
+
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+/* Phone Landscape */
+@media screen and (max-height:480px){
+
+    .side-nav-icon{
+        font-size: 1.8rem;
+    }
+
+    .navbar{
+        padding: 1rem;
+    }
+    
+    .nav-item ul{
+        font-size: 1.2rem;
+        top: 1.5rem;
+    }
+    
+    .nav-item ul li{
+        margin-right: 1.5rem;
+    }
+    
+    .side-nav-item ul{
+        font-size: 1.5rem;
+        width: 20vw;
+        height: 100vh;
+    }
+    
+    .side-nav-item ul li{
+        padding: 1rem;
+    }
+    
+    .search{
+        padding: 0.3rem 1vw 0.3rem 6vw;
+        border-radius: 1rem;
+        font-size: 1rem;
+        top:0.4rem;right: 3rem;
+    }
+
+    .nav-item .fa-search{
+        font-size: 1rem;
+        left: -1rem; top: 1rem;
+    }
+
+    .nav-item .fa-user-circle{
+        font-size: 2rem;
+        margin-right: 2px;
+     }
+     .nav-item label{font-size: 1.1rem;top:-4px}
+}
+
