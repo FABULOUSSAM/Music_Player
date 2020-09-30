@@ -56,7 +56,11 @@
     <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/particle.js" ></script>
+    <script type="text/javascript" src="js/app.js" ></script>
+
     <title>Music Player</title>
 </head>
 <body>
@@ -76,7 +80,7 @@
             <a href="#0">Category3</a>
         </div>
     </div>
-
+    
     <div class="navbar">
         <span class="nav-item" id="nav-item-1">
             <a href="#" onclick="openNav()" class="side-nav-icon"><i class="fas fa-bars"></i></a>
@@ -97,6 +101,7 @@
             <i style="float:right;" class="fa fa-search"></i>
         </span>
     </div>
+    
     <!-- Navigation and SideNavigation Ends -->
 
     <?php
@@ -104,7 +109,7 @@
             header("Location:index.php");
     ?>  
     
-    <table>
+    <table >
         <tbody>
             <?php
                 if($_GET['q']=="popular"){
@@ -119,7 +124,7 @@
                         echo '<td><img src="music/thumbnail/'.$rows[1].'" alt="#"></td>';
                         echo '<td><p class="card-text">'.$rows[2].'</p><p>{ '.$rows[3].' }</p></td>';
                         echo '<td><i id="'.$rows[0].'" class="far fa-heart" onclick="changeHeart('.$rows[0].')"></i><span id="n'.$rows[0].'"> '.$rows[7].'</span></td>';
-                        echo '<td><i id="p'.$rows[0].'" class="fas fa-play"></i></td>';
+                        echo '<td><i id="p'.$rows[0].'" class="fas fa-play" ></i></td>';
                         echo '<td><i id="d'.$rows[0].'" class="fa fa-plus" aria-hidden="true" onclick="open_modal('.$rows[0].')"></i></td>';
                         echo '</tr>';
                     }
@@ -137,7 +142,7 @@
                         echo '<td><img src="music/thumbnail/'.$rows[1].'" alt="#"></td>';
                         echo '<td><p class="card-text">'.$rows[2].'</p><p>{ '.$rows[3].' }</p></td>';
                         echo '<td><i id="'.$rows[0].'" class="far fa-heart" onclick="changeHeart('.$rows[0].')"></i><span id="n'.$rows[0].'"> '.$rows[7].'</span></td>';
-                        echo '<td><i id="p'.$rows[0].'" class="fas fa-play"></i></td>';
+                        echo '<td><i id="p'.$rows[0].'" class="fas fa-play" ></i></td>';
                         echo '<td><i id="d'.$rows[0].'" class="fa fa-plus" aria-hidden="true" onclick="open_modal('.$rows[0].')"></i></td>';
                         echo '</tr>';
                     }

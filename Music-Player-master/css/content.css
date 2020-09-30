@@ -7,7 +7,7 @@
 }
   
 #outer0 {
-    width: 70rem;
+    width: 100rem;
     overflow: hidden;
     white-space: nowrap;
     margin-left: 2rem;
@@ -31,7 +31,7 @@
 }
  /* Second */
 #outer1 {
-    width: 70rem;
+    width: 100rem;
     overflow: hidden;
     white-space: nowrap;
     margin-left: 2rem;
@@ -56,7 +56,7 @@
 
 /* Third */
 #outer2 {
-    width: 70rem;
+    width: 100rem;
     overflow: hidden;
     white-space: nowrap;
     margin-left: 2rem;

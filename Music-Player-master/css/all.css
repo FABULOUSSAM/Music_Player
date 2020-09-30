@@ -41,12 +41,14 @@ td img{
 
 /* Modal Content/Box */
 .modal-content {
-    background-color: #fefefe;
+    background-color: #000000;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(255, 254, 254, 0.19);
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 40%; /* Could be more or less, depending on screen size */
     font-weight: bold;
+    border-radius: 25px;
 }
   
   /* The Close Button */
@@ -87,12 +89,26 @@ td img{
 .btn{
     color: white;
     text-decoration: none;
-    background-color: rgb(82, 255, 47);
+   background-image: linear-gradient(#000000, #55EFC4);
     padding: 6px 8px;
     margin: 12px;
     border-radius: 5px;
 }
-
+table{
+    background-image: linear-gradient(#000000, #55EFC4);
+    width: 100%;
+    color: wheat;
+}
+h2{
+    font-family: Comic Sans MS;
+    text-align: center;
+    padding:10px;
+    background-color:#000000 ;
+    color: whitesmoke;
+}
+.popular_extension{
+    width: 100%;
+}
 
 /* Phone Portrait */
 @media screen and (max-width:480px){
@@ -109,6 +125,7 @@ td img{
     h2{
         margin: 1rem;
         font-size: 1.3rem !important;
+        
     }
 
     .card-text{font-weight: bold;font-size: 1rem;}
@@ -130,6 +147,10 @@ td img{
         right: 1rem;
     }
 }
+
+
+
+
 
 /* Phone Landscape */
 /* @media screen and (max-height:480px){
