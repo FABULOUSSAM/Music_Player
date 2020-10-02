@@ -14,7 +14,7 @@
 
     if(mysqli_num_rows($res) > 0){
 
-        if(strcmp($row['Password'],$Password)==0){
+        if(strcmp($row['Pass'],$Password)==0){
         //if the user exists then create seesion variables emailid and password
         $_SESSION['Username']=$Username;
         $_SESSION['Password']=$Password;
