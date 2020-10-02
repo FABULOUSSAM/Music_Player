@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Sep 29, 2020 at 08:24 AM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.8
+-- Host: 127.0.0.1
+-- Generation Time: Oct 02, 2020 at 03:42 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `Music_Player`
+-- Database: `music_player`
 --
 
 -- --------------------------------------------------------
@@ -90,10 +91,18 @@ INSERT INTO `music` (`id`, `thumbnail`, `name`, `artist`, `category`, `release_d
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
-  `name` varchar(10) NOT NULL,
+  `Username` varchar(10) NOT NULL,
   `email` varchar(20) NOT NULL,
-  `password` varchar(10) NOT NULL
+  `contact` int(10) NOT NULL,
+  `Pass` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `Username`, `email`, `contact`, `Pass`) VALUES
+(4, 'Shubham', 'shubham.mohapess@gma', 12345, '12345');
 
 --
 -- Indexes for dumped tables
@@ -137,7 +146,7 @@ ALTER TABLE `music`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
