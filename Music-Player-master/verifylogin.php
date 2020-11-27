@@ -16,7 +16,7 @@
 
         if(strcmp($row['Pass'],$Password)==0){
         //if the user exists then create seesion variables emailid and password
-        $_SESSION['Username']=$Username;
+        $_SESSION['user']=$Username;
         $_SESSION['Password']=$Password;
         
 

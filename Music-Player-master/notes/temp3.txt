@@ -1,0 +1,119 @@
+<?php 
+    session_start();
+    $user="Guest";
+    if(isset($_SESSION['user']))
+        $user=$_SESSION['user'];
+
+    $severname="localhost";
+    $username="root";
+    $password="";
+    $dbname="Music_Player";
+
+    $conn=mysqli_connect($severname,$username,$password);
+        
+    if(!$conn)
+        die("Connection failed".mysqli_connect_error());
+    mysqli_select_db($conn, $dbname);
+
+    require_once('vendor/autoload.php'); 
+    use YouTube\YouTubeDownloader;
+    $yt = new YouTubeDownloader();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="curl.php" method="post">
+        <input type="text" id="search" autocomplete="off" name="elem">
+        <input type="submit" value="Submit">
+    </form>
+    
+    <?php 
+
+        // TimeStamp0
+        $t0=time();
+
+        $yt_id=array();$name=array();
+        $img=array();$duration=array();
+
+
+        if(isset($_POST['elem'])){
+            $elem=$_POST['elem'];
+            $str="https://freemp3downloads.online/download?url=".$elem;
+            $doc = new DOMDocument();
+            libxml_use_internal_errors(true);
+
+            // TimeStamp1
+            $t1=time();
+
+            $doc->loadHTMLFile($str);
+
+            // TimeStamp2
+            $t2=time();
+
+            foreach($doc->getElementsByTagName('img') as $a) {
+                if ($a->getAttribute('class') === 'card-img-top') {
+                    array_push($img,$a->getAttribute('src'));
+                    array_push($name,$a->getAttribute('alt'));
+                }
+            }
+
+            foreach($doc->getElementsByTagName('small') as $a) {
+                if ($a->getAttribute('class') === 'text-muted') 
+                    array_push($duration,$a->nodeValue);
+            }
+
+            foreach($doc->getElementsByTagName('a') as $a) {
+                if ($a->getAttribute('class') === 'card-link') {
+                    $parts = explode('?', $a->getAttribute('href'));
+                    parse_str($parts[1], $output);
+                    array_push($yt_id,$output['url']);
+                }
+            }
+
+            for ($i=0; $i<count($yt_id) ; $i++)
+                echo $name[$i].' '.$img[$i].' '.$yt_id[$i].'<br>';
+
+            $links = $yt->getDownloadLinks("https://www.youtube.com/watch?v=".$yt_id[0]);
+        
+            // var_dump($links);
+
+            $audio=end($links);
+            $url=$conn->real_escape_string($audio['url']);
+            // echo '<br>___________________<br>'.$url;
+
+            // TimeStamp3
+            $t3=time();
+
+            $name=$conn->real_escape_string($name[0]);
+            $name=substr($name,0,49);
+
+            $thumbnail=$conn->real_escape_string($img[0]);
+            $duration=$conn->real_escape_string($duration[0]);
+
+            $sql="INSERT INTO `music`(`name`,`thumbnail`,`src`,`duration`) VALUES ('$name','$thumbnail','$url','$duration');";
+            $result=$conn->query($sql);
+            if($result){
+                $id=$conn->insert_id;
+                // echo '<br><br>ID IS ----->'.$id;
+            }
+            else
+                echo 'Error: '.$conn->error;
+
+            // TimeStamp4
+            $t4=time();
+
+            // echo '<br><br>'.$t0." ".$t1." ".$t2." ".$t3." ".$t4;
+            header("Location:/Music-Player-master/play.php?id=".$id);    
+        }
+    ?>
+    
+</body>
+</html>

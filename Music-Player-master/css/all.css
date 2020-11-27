@@ -110,6 +110,7 @@ h2{
     width: 100%;
 }
 
+
 /* Phone Portrait */
 @media screen and (max-width:480px){
     .popular_a td, .recent_a td{

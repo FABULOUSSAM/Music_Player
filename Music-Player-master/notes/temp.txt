@@ -1,0 +1,535 @@
+JS
+
+// Scroll Buttons
+$(function() {
+    var print = function(msg) {
+      alert(msg);
+    };
+
+    var setInvisible = function(elem) {
+      elem.css('visibility', 'hidden');
+    };
+    var setVisible = function(elem) {
+      elem.css('visibility', 'visible');
+    };
+
+    var elem = $("#elem");
+    var items = elem.children();
+
+    // Inserting Buttons
+    elem.prepend('<div id="right-button" style="visibility: hidden;"><img src="img/arrow-right.png" alt="#"></div>');
+    elem.append('  <div id="left-button"><img src="img/arrow-left.png" alt="#"></div>');
+
+    // Inserting Inner
+    items.wrapAll('<div id="inner" />');
+
+    // Inserting Outer
+    elem.find('#inner').wrap('<div id="outer"/>');
+
+    var outer = $('#outer');
+
+    var updateUI = function() {
+      var maxWidth = outer.outerWidth(true);
+      var actualWidth = 0;
+      $.each($('#inner >'), function(i, item) {
+        actualWidth += $(item).outerWidth(true);
+      });
+
+      if (actualWidth <= maxWidth) {
+        setVisible($('#left-button'));
+      }
+    };
+    updateUI();
+
+    $('#right-button').click(function() {
+      var leftPos = outer.scrollLeft();
+      outer.animate({
+        scrollLeft: leftPos - 500
+      }, 200, function() {
+        if ($('#outer').scrollLeft() <= 0) {
+          setInvisible($('#right-button'));
+        }
+      });
+    });
+
+    $('#left-button').click(function() {
+      setVisible($('#right-button'));
+      var leftPos = outer.scrollLeft();
+      outer.animate({
+        scrollLeft: leftPos + 500
+      }, 200);
+    });
+
+    $(window).resize(function() {
+      updateUI();
+    });
+});
+
+// Second
+$(function() {
+  var print = function(msg) {
+    alert(msg);
+  };
+
+  var setInvisible = function(elem) {
+    elem.css('visibility', 'hidden');
+  };
+  var setVisible = function(elem) {
+    elem.css('visibility', 'visible');
+  };
+
+  var elem = $("#elem1");
+  var items = elem.children();
+
+  // Inserting Buttons
+  elem.prepend('<div id="right-button1" style="visibility: hidden;"><img src="img/arrow-right.png" alt="#"></div>');
+  elem.append('  <div id="left-button1"><img src="img/arrow-left.png" alt="#"></div>');
+
+  // Inserting Inner
+  items.wrapAll('<div id="inner1" />');
+
+  // Inserting Outer
+  elem.find('#inner1').wrap('<div id="outer1"/>');
+
+  var outer = $('#outer1');
+
+  var updateUI = function() {
+    var maxWidth = outer.outerWidth(true);
+    var actualWidth = 0;
+    $.each($('#inner1 >'), function(i, item) {
+      actualWidth += $(item).outerWidth(true);
+    });
+
+    if (actualWidth <= maxWidth) {
+      setVisible($('#left-button1'));
+    }
+  };
+  updateUI();
+
+  $('#right-button1').click(function() {
+    var leftPos = outer.scrollLeft();
+    outer.animate({
+      scrollLeft: leftPos - 500
+    }, 200, function() {
+      if ($('#outer1').scrollLeft() <= 0) {
+        setInvisible($('#right-button1'));
+      }
+    });
+  });
+
+  $('#left-button1').click(function() {
+    setVisible($('#right-button1'));
+    var leftPos = outer.scrollLeft();
+    outer.animate({
+      scrollLeft: leftPos + 500
+    }, 200);
+  });
+
+  $(window).resize(function() {
+    updateUI();
+  });
+});
+
+CSS
+
+#outer {
+    width: 70rem;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 2rem;
+}
+  
+#left-button,#right-button {
+    float: left;
+    width: 30px;
+    text-align: center;
+    position: relative;
+    top: 5rem;
+    cursor: pointer;
+}
+
+#inner:first-child {
+    margin-left: 0;
+}
+  
+.hide {
+    display: none;
+}
+ /* Second */
+#outer1 {
+    width: 70rem;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 2rem;
+}
+  
+#left-button1 ,#right-button1 {
+    float: left;
+    width: 30px;
+    text-align: center;
+    position: relative;
+    top: 5rem;
+    cursor: pointer;
+}
+
+#inner1:first-child {
+    margin-left: 0;
+}
+  
+.hide {
+    display: none;
+}
+
+HTML
+
+<!-- Popular and Trending List -->
+    <h2>Popular and Trending</h2>
+    
+    <div id="elem" style="display: flex;">
+    
+        <div class="card" style="margin-left: 0;">
+            <img src="https://upload.wikimedia.org/wikipedia/en/8/80/Ed_Sheeran_Perfect_Single_cover.jpg" class="card-img-top" alt="#">
+            <div class="card-body" style="text-align: center;">
+                <p class="card-text">Despacito</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/8/80/Ed_Sheeran_Perfect_Single_cover.jpg" class="card-img-top" alt="#">
+            <div class="card-body" style="text-align: center;">
+                <p class="card-text">Diamond Da challa</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/8/80/Ed_Sheeran_Perfect_Single_cover.jpg" class="card-img-top" alt="#">
+            <div class="card-body" style="text-align: center;">
+                <p class="card-text">Pikachu3</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/8/80/Ed_Sheeran_Perfect_Single_cover.jpg" class="card-img-top" alt="#">
+            <div class="card-body" style="text-align: center;">
+                <p class="card-text">Pikachu4</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/8/80/Ed_Sheeran_Perfect_Single_cover.jpg" class="card-img-top" alt="#">
+            <div class="card-body" style="text-align: center;">
+                <p class="card-text">Pikachu5</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/8/80/Ed_Sheeran_Perfect_Single_cover.jpg" class="card-img-top" alt="#">
+            <div class="card-body" style="text-align: center;">
+                <p class="card-text">Pikachu6</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/8/80/Ed_Sheeran_Perfect_Single_cover.jpg" class="card-img-top" alt="#">
+            <div class="card-body" style="text-align: center;">
+                <p class="card-text">Pikachu7</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/8/80/Ed_Sheeran_Perfect_Single_cover.jpg" class="card-img-top" alt="#">
+            <div class="card-body" style="text-align: center;">
+                <p class="card-text">Pikachu8</p>
+            </div>
+        </div>
+    </div>
+
+
+    <h2>Popular and Trending</h2>
+    
+    <div id="elem1" style="display: flex;">
+    
+        <div class="card" style="margin-left: 0;">
+            <img src="https://upload.wikimedia.org/wikipedia/en/8/80/Ed_Sheeran_Perfect_Single_cover.jpg" class="card-img-top" alt="#">
+            <div class="card-body" style="text-align: center;">
+                <p class="card-text">Despacito</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/8/80/Ed_Sheeran_Perfect_Single_cover.jpg" class="card-img-top" alt="#">
+            <div class="card-body" style="text-align: center;">
+                <p class="card-text">Diamond Da challa</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/8/80/Ed_Sheeran_Perfect_Single_cover.jpg" class="card-img-top" alt="#">
+            <div class="card-body" style="text-align: center;">
+                <p class="card-text">Pikachu3</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/8/80/Ed_Sheeran_Perfect_Single_cover.jpg" class="card-img-top" alt="#">
+            <div class="card-body" style="text-align: center;">
+                <p class="card-text">Pikachu4</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/8/80/Ed_Sheeran_Perfect_Single_cover.jpg" class="card-img-top" alt="#">
+            <div class="card-body" style="text-align: center;">
+                <p class="card-text">Pikachu5</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/8/80/Ed_Sheeran_Perfect_Single_cover.jpg" class="card-img-top" alt="#">
+            <div class="card-body" style="text-align: center;">
+                <p class="card-text">Pikachu6</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/8/80/Ed_Sheeran_Perfect_Single_cover.jpg" class="card-img-top" alt="#">
+            <div class="card-body" style="text-align: center;">
+                <p class="card-text">Pikachu7</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/8/80/Ed_Sheeran_Perfect_Single_cover.jpg" class="card-img-top" alt="#">
+            <div class="card-body" style="text-align: center;">
+                <p class="card-text">Pikachu8</p>
+            </div>
+        </div>
+    </div>
+
+Using Php for css
+
+#outer0 {
+    width: 70rem;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 2rem;
+}
+  
+#left-button0 ,#right-button0 {
+    float: left;
+    width: 30px;
+    text-align: center;
+    position: relative;
+    top: 5rem;
+    cursor: pointer;
+}
+
+#inner0:first-child {
+    margin-left: 0;
+}
+  
+.hide {
+    display: none;
+}
+ /* Second */
+#outer1 {
+    width: 70rem;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 2rem;
+}
+  
+#left-button1 ,#right-button1 {
+    float: left;
+    width: 30px;
+    text-align: center;
+    position: relative;
+    top: 5rem;
+    cursor: pointer;
+}
+
+#inner1:first-child {
+    margin-left: 0;
+}
+  
+.hide {
+    display: none;
+}
+
+//Like Unlike Reference
+
+<?php 
+	// connect to the database
+	$con = mysqli_connect('localhost', 'root', '', 'like');
+
+	if (isset($_POST['liked'])) {
+		$postid = $_POST['postid'];
+		$result = mysqli_query($con, "SELECT * FROM posts WHERE id=$postid");
+		$row = mysqli_fetch_array($result);
+		$n = $row['likes'];
+
+		mysqli_query($con, "INSERT INTO likes (userid, postid) VALUES (1, $postid)");
+		mysqli_query($con, "UPDATE posts SET likes=$n+1 WHERE id=$postid");
+
+		echo $n+1;
+		exit();
+	}
+	if (isset($_POST['unliked'])) {
+		$postid = $_POST['postid'];
+		$result = mysqli_query($con, "SELECT * FROM posts WHERE id=$postid");
+		$row = mysqli_fetch_array($result);
+		$n = $row['likes'];
+
+		mysqli_query($con, "DELETE FROM likes WHERE postid=$postid AND userid=1");
+		mysqli_query($con, "UPDATE posts SET likes=$n-1 WHERE id=$postid");
+		
+		echo $n-1;
+		exit();
+	}
+
+	// Retrieve posts from the database
+	$posts = mysqli_query($con, "SELECT * FROM posts");
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Like and unlike system</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<!-- display posts gotten from the database  -->
+		<?php while ($row = mysqli_fetch_array($posts)) { ?>
+
+			<div class="post">
+				<?php echo $row['text']; ?>
+
+				<div style="padding: 2px; margin-top: 5px;">
+				<?php 
+					// determine if user has already liked this post
+					$results = mysqli_query($con, "SELECT * FROM likes WHERE userid=1 AND postid=".$row['id']."");
+
+					if (mysqli_num_rows($results) == 1 ): ?>
+						<!-- user already likes post -->
+						<span class="unlike fa fa-thumbs-up" data-id="<?php echo $row['id']; ?>"></span> 
+						<span class="like hide fa fa-thumbs-o-up" data-id="<?php echo $row['id']; ?>"></span> 
+					<?php else: ?>
+						<!-- user has not yet liked post -->
+						<span class="like fa fa-thumbs-o-up" data-id="<?php echo $row['id']; ?>"></span> 
+						<span class="unlike hide fa fa-thumbs-up" data-id="<?php echo $row['id']; ?>"></span> 
+					<?php endif ?>
+
+					<span class="likes_count"><?php echo $row['likes']; ?> likes</span>
+				</div>
+			</div>
+
+		<?php } ?>
+
+
+<!-- Add Jquery to page -->
+<script src="jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		// when the user clicks on like
+		$('.like').on('click', function(){
+			var postid = $(this).data('id');
+			    $post = $(this);
+
+			$.ajax({
+				url: 'index.php',
+				type: 'post',
+				data: {
+					'liked': 1,
+					'postid': postid
+				},
+				success: function(response){
+					$post.parent().find('span.likes_count').text(response + " likes");
+					$post.addClass('hide');
+					$post.siblings().removeClass('hide');
+				}
+			});
+		});
+
+		// when the user clicks on unlike
+		$('.unlike').on('click', function(){
+			var postid = $(this).data('id');
+		    $post = $(this);
+
+			$.ajax({
+				url: 'index.php',
+				type: 'post',
+				data: {
+					'unliked': 1,
+					'postid': postid
+				},
+				success: function(response){
+					$post.parent().find('span.likes_count').text(response + " likes");
+					$post.addClass('hide');
+					$post.siblings().removeClass('hide');
+				}
+			});
+		});
+	});
+</script>
+
+//Details of music
+
+<div class="ditem">
+  <img class="icon" src="./img/music.jpg" alt="#">
+  <span id="dtitle"></span>
+</div>
+<div class="ditem">
+    <img class="icon" src="./img/mic.jpg" alt="#">
+    <span id="dartist"></span>
+</div>
+<div class="ditem">
+    <img class="icon" src="./img/calendar.png" alt="#">
+    <span id="drelease"></span>
+</div>
+<div class="ditem">
+    <img class="icon" src="./img/clock.png" alt="#">
+    <span id="dduration"></span>
+</div>
+<div class="ditem">
+    <!-- <img class="icon" src="./img/music.jpg" alt="#"> -->
+    <span id="dcategory"></span>
+</div>
+
+//Modal With Icon
+
+<div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="ditem" style="text-align:center">
+                <img id="dimage" src="#" alt="#">
+            </div>
+
+            <table style="margin: 0 auto;">
+                <tr class="ditem">
+                    <td class="attr"><img class="icon" src="./img/music.jpg" alt="#"> Title</td>
+                    <td class="val" id="dtitle"></td>
+                </tr>
+                <tr class="ditem">
+                    <td class="attr"><img class="icon" src="./img/mic.jpg" alt="#"> Artist</td>
+                    <td class="val" id="dartist"></td>
+                </tr>
+                <tr class="ditem">
+                    <td class="attr"><img class="icon" src="./img/calendar.png" alt="#"> Released On</td>
+                    <td class="val" id="drelease"></td>
+                </tr>
+                <tr class="ditem">
+                    <td class="attr"><img class="icon" src="./img/clock.png" alt="#"> Duration</td>
+                    <td class="val" id="dduration"></td>
+                </tr>
+            </table>
+
+            <div style="display: flex; flex-direction: column; text-align: center">
+                <a class="btn" href="https://www.google.com/"><img src="img/queue.png" class="icon" alt="#"> Add To Queue</a>
+                <a class="btn" href="#"><img src="img/playlist.png" class="icon" alt="#"> Add To Playlist</a>
+                <a class="btn" href="#"><img src="img/download.png" class="icon" alt="#"> Download</a>
+                
+            </div>
+        </div>
+    </div>

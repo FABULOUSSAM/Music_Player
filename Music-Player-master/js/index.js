@@ -11,6 +11,10 @@ function openNav() {
     "background-color":"rgba(0,0,0,0.4)"
   });
   $("html").css("overflow","hidden");
+
+  $('#mySidenav a').click(function(){
+    $("html").css("overflow","auto");
+  });
 }
 // Close Side Nav
 function closeNav() {
@@ -91,4 +95,3 @@ $(function(){
   set_scroll("1");
   set_scroll("2");
 });
-
