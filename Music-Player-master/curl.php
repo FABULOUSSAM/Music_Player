@@ -1,42 +1,8 @@
 <?php 
-    session_start();
-    
-    $user="Guest";
-    if(isset($_SESSION['user']))
-        $user=$_SESSION['user'];
-
-    $severname="localhost";
-    $username="root";
-    $password="";
-    $dbname="music_player";
-
-    $conn=mysqli_connect($severname,$username,$password);
-        
-    if(!$conn)
-        die("Connection failed".mysqli_connect_error());
-    mysqli_select_db($conn, $dbname);
-
     require_once('vendor/autoload.php'); 
     use YouTube\YouTubeDownloader;
     $yt = new YouTubeDownloader();
-?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>Document</title>
-</head>
-<body>
-
-    <form action="curl.php" method="post">
-        <input type="text" id="search" autocomplete="off" name="elem">
-        <input type="submit" value="Submit">
-    </form>
-    
-    <?php 
         $yt_id=array();$name=array();
         $img=array();$duration=array();
 
@@ -67,8 +33,8 @@
                 }
             }
 
-            for ($i=0; $i<count($yt_id) ; $i++)
-            echo $name[$i].' '.$img[$i].' '.$yt_id[$i].'<br>';
+            // for ($i=0; $i<count($yt_id) ; $i++)
+            // echo $name[$i].' '.$img[$i].' '.$yt_id[$i].'<br>';
 
             $links = $yt->getDownloadLinks("https://www.youtube.com/watch?v=".$yt_id[0]);
            
@@ -110,15 +76,17 @@
             $likes=$data['items'][0]['statistics']['likeCount'];
         
             $sql="INSERT INTO `music`(`name`,`thumbnail`,`src`,`duration`,`release_date`,`likes`) VALUES ('$name','$thumbnail','$url','$duration','$date','$likes');";
-            $result=$conn->query($sql);
+            // $result=$conn->query($sql);
            
-            if($result)
+            if($result=$conn->query($sql))
                 $id=$conn->insert_id;
-            else
-                echo 'Error: '.$conn->error;
+            else{
+                $sql="SELECT * FROM `music` WHERE `name`='$name'";
+                $result=$conn->query($sql);
+                $row=$result->fetch_row();
+                $id=$row[0];
+            }
                 
             header("Location:/Music-Player-master/play.php?id=".$id);    
         }
-    ?>
-</body>
-</html>
+?>

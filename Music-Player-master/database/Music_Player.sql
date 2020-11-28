@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Nov 02, 2020 at 01:10 PM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.8
+-- Host: 127.0.0.1
+-- Generation Time: Nov 28, 2020 at 05:13 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `Music_Player`
+-- Database: `music_player`
 --
 
 -- --------------------------------------------------------
@@ -80,10 +81,9 @@ INSERT INTO `music` (`id`, `thumbnail`, `name`, `artist`, `src`, `category`, `re
 (152, 'music/thumbnail/Fall In Dark5.jpg', 'Fall In Dark5', 'Shibayan5', 'music/files/Fall In Dark0.mp3', NULL, '2020-09-02', '3:00', 30),
 (153, 'music/thumbnail/Fall In Dark6.jpg', 'Fall In Dark6', 'Shibayan6', 'music/files/Fall In Dark0.mp3', NULL, '2020-09-02', '3:00', 30),
 (154, 'music/thumbnail/Fall In Dark7.jpg', 'Fall In Dark7', 'Shibayan7', 'music/files/Fall In Dark0.mp3', NULL, '2020-09-02', '3:00', 30),
-(158, 'https://i.ytimg.com/vi/PT2_F-1esPk/hq720.jpg', 'The Chainsmokers - Closer (Lyric) ft. Halsey', NULL, 'https://r6---sn-ci5gup-cvhs.googlevideo.com/videoplayback?expire=1604338972&ei=vPCfX4eTMIeJogP0mo3QDQ&ip=182.77.85.32&id=o-ANcRhPbEIdKadi90OZtSKETfjELR3U7XRhjE4nhW2fAk&itag=251&source=youtube&requiressl=yes&mh=NZ&mm=31%2C26&mn=sn-ci5gup-cvhs%2Csn-qxa7sn7z&ms=au%2Conr&mv=m&mvi=6&pl=20&gcr=in&initcwndbps=1047500&vprv=1&mime=audio%2Fwebm&gir=yes&clen=4348334&dur=261.821&lmt=1577948321024688&mt=1604317246&fvip=6&keepalive=yes&c=WEB&txp=5531432&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cgcr%2Cvprv%2Cmime%2Cgir%2Cclen%2Cdur%2Clmt&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRQIhAIy89JxkERBpawN9KSbh2E3Q2ftknwje_TnPxDYAma80AiBicPAWm-LI88_QB0DaiMAjcvsD08j8l4jQ1gFDkVs3hA%3D%3D&sig=AOq0QJ8wRQIhAK0YUCz-GS7ZtrRRLo5TTSOmmVGNWfx4kKCYSUvf82wjAiADVBSZm7IvCLKQrthTJT7DkLBwo7e0EfsT3GMQMJBIhg==', NULL, '2016-07-29', '4:22', 11094556),
-(159, 'https://i.ytimg.com/vi/PT2_F-1esPk/hq720.jpg', 'The Chainsmokers - Closer (Lyric) ft. Halsey', NULL, 'https://r6---sn-ci5gup-cvhs.googlevideo.com/videoplayback?expire=1604339560&ei=CPOfX_STDo6-vASr_Iz4Cg&ip=182.77.85.32&id=o-AMkTZXuXjdP85cv2_19fn2Eo3dAVZTAGhd3hw8voX9U2&itag=251&source=youtube&requiressl=yes&mh=NZ&mm=31%2C26&mn=sn-ci5gup-cvhs%2Csn-qxa7sn7z&ms=au%2Conr&mv=m&mvi=6&pl=20&gcr=in&initcwndbps=748750&vprv=1&mime=audio%2Fwebm&gir=yes&clen=4348334&dur=261.821&lmt=1577948321024688&mt=1604317840&fvip=6&keepalive=yes&c=WEB&txp=5531432&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cgcr%2Cvprv%2Cmime%2Cgir%2Cclen%2Cdur%2Clmt&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRQIgH0h6sZFTMhr1QPerTrueuMdlNWHhIhyu5V_6JW-Eh98CIQDG4OT64tiilYu83lfF9YXUUODT3WglzYsrSFeeLVM0MA%3D%3D&sig=AOq0QJ8wRQIhAOhQREGybwrt5_y997VE_uaoBzs6N5NxS-0yaHLjh6O0AiBo_uUzaMzJVfY7yZb5GizObXXwiKdy1U3P3QkIFbUwhw==', NULL, '2016-07-29', '4:22', 11094578),
-(160, 'https://i.ytimg.com/vi/_IkopJwRDKU/hq720.jpg', 'Gurenge', NULL, 'https://r2---sn-ci5gup-cvhk.googlevideo.com/videoplayback?expire=1604340190&ei=fvWfX_OMI-Ouz7sP5pap-A8&ip=182.77.85.32&id=o-AJ9T0mnLBvuR8_T8DkqQn4gi5Znd8MAR97Gkz7GHDbYm&itag=251&source=youtube&requiressl=yes&mh=R4&mm=31%2C26&mn=sn-ci5gup-cvhk%2Csn-qxa7snel&ms=au%2Conr&mv=m&mvi=2&pl=20&gcr=in&initcwndbps=1105000&vprv=1&mime=audio%2Fwebm&gir=yes&clen=3788029&dur=238.601&lmt=1577559313022228&mt=1604318439&fvip=2&keepalive=yes&c=WEB&txp=5531432&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cgcr%2Cvprv%2Cmime%2Cgir%2Cclen%2Cdur%2Clmt&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRgIhALIlCuW4u54xIcTHx03R6HuzAvdmvUvUNvZAD_lWRjj6AiEA-s0bVz12POSF5cUjxQHsYxelqvmUsfKYPRIeCisIMYM%3D&sig=AOq0QJ8wRQIgWPJnER9lAtnHd9a5z5u5ag9IzQKyE7HOzAU9TD-_FWACIQDetDCG9EljEvTkoEtbspRd_esH-sdNq6qjwGnPy8lvzw==', NULL, '2019-07-02', '3:59', 310723),
-(161, 'https://i.ytimg.com/vi/pkw_Hl3qXCs/hq720.jpg', '[Official - The God Of High School - OP FULL] KSU', NULL, 'https://r4---sn-ci5gup-cvhr.googlevideo.com/videoplayback?expire=1604340231&ei=p_WfX_D7HJeYoAPgwK2wDQ&ip=182.77.85.32&id=o-APyVOrz4UlZ8Y3iY08mLHt33iple4pkOknEXNgnbkSA5&itag=251&source=youtube&requiressl=yes&mh=ES&mm=31%2C26&mn=sn-ci5gup-cvhr%2Csn-qxaeen7l&ms=au%2Conr&mv=m&mvi=4&pl=20&initcwndbps=1025000&vprv=1&mime=audio%2Fwebm&gir=yes&clen=3098014&dur=202.701&lmt=1594709237370641&mt=1604318563&fvip=4&keepalive=yes&c=WEB&txp=5431432&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cgir%2Cclen%2Cdur%2Clmt&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRgIhAKZEFGLh2RRO4oaIv-p-SVn35u8r2AIBbjrEF0a6rvZLAiEA7TSUA3cdXSHn3cYrth030FKZyjoQHTWruOQNSwFy7hc%3D&sig=AOq0QJ8wRQIhANCgj1mzgd2RU55ghbhN_EkQO9_D24RgC8EIDQwvGJJoAiB3q2HQ7OknOYXwVq1L3scDV6zoq8GZI0Fr6cvnIGc0bw==', NULL, '2020-07-13', '3:23', 28173);
+(158, 'https://i.ytimg.com/vi/PT2_F-1esPk/hq720.jpg', 'The Chainsmokers - Closer (Lyric) ft. Halsey', NULL, 'https://r6---sn-ci5gup-cvhs.googlevideo.com/videoplayback?expire=1604338972&ei=vPCfX4eTMIeJogP0mo3QDQ&ip=182.77.85.32&id=o-ANcRhPbEIdKadi90OZtSKETfjELR3U7XRhjE4nhW2fAk&itag=251&source=youtube&requiressl=yes&mh=NZ&mm=31%2C26&mn=sn-ci5gup-cvhs%2Csn-qxa7sn7z&ms=au%2Conr&mv=m&mvi=6&pl=20&gcr=in&initcwndbps=1047500&vprv=1&mime=audio%2Fwebm&gir=yes&clen=4348334&dur=261.821&lmt=1577948321024688&mt=1604317246&fvip=6&keepalive=yes&c=WEB&txp=5531432&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cgcr%2Cvprv%2Cmime%2Cgir%2Cclen%2Cdur%2Clmt&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRQIhAIy89JxkERBpawN9KSbh2E3Q2ftknwje_TnPxDYAma80AiBicPAWm-LI88_QB0DaiMAjcvsD08j8l4jQ1gFDkVs3hA%3D%3D&sig=AOq0QJ8wRQIhAK0YUCz-GS7ZtrRRLo5TTSOmmVGNWfx4kKCYSUvf82wjAiADVBSZm7IvCLKQrthTJT7DkLBwo7e0EfsT3GMQMJBIhg==', NULL, '2016-07-29', '4:22', 11094557),
+(169, 'https://i.ytimg.com/vi/_AsPY1bQx70/hqdefault.jpg', 'Shinedown - DEVIL (Official Video)', NULL, 'https://r1---sn-qpbpu5an5uxaapuxpo-cvhe.googlevideo.com/videoplayback?expire=1606568629&ei=VPbBX7q6OsWQvQS3yb7ICg&ip=103.87.28.187&id=o-ACmP5RDXsAxsRC6QVrjjS5HNIZAJD6oiqQMga3gt8Xcl&itag=251&source=youtube&requiressl=yes&mh=Mg&mm=31%2C29&mn=sn-qpbpu5an5uxaapuxpo-cvhe%2Csn-cvh7knek&ms=au%2Crdu&mv=m&mvi=1&pl=24&initcwndbps=942500&vprv=1&mime=audio%2Fwebm&ns=7Inz9HnOQSwbBc8UFKUe-fwF&gir=yes&clen=3831275&dur=246.681&lmt=1574971611295769&mt=1606546842&fvip=1&keepalive=yes&c=WEB&txp=5531432&n=SEfU0APvQh7nUEfPIwf&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRQIhAPnv5kmWsjeJs8gcZHinL7mqpg0LTlTFMEjB4Rs1ofr5AiAciuBNXPjvzCb_6NDfjBGfI2CaJvRsruY5co1ohHkwLA%3D%3D&sig=AOq0QJ8wRgIhAOW4XCZbtkr6jSeSRsYYXsm0BgDN14fT7cdY86SQ4Z1QAiEAj87uSX7LcxHxQxBykikx6BjRfzyLVZ3xBpA16BxBcj0=', NULL, '2018-03-07', '4:07', 181503),
+(170, 'https://i.ytimg.com/vi/-tJYN-eG1zk/hqdefault.jpg', 'Queen - We Will Rock You (Official Video)', NULL, 'https://r3---sn-qpbpu5an5uxaapuxpo-cvhe.googlevideo.com/videoplayback?expire=1606570159&ei=T_zBX56_DK7J3LUPo7ye6Aw&ip=103.87.28.187&id=o-AGSJVSeVonPC0ZlZ5XQn1mquTYhnqbVD38MjvfOG26hy&itag=251&source=youtube&requiressl=yes&mh=D5&mm=31%2C29&mn=sn-qpbpu5an5uxaapuxpo-cvhe%2Csn-cvh76n7k&ms=au%2Crdu&mv=m&mvi=3&pl=24&initcwndbps=968750&vprv=1&mime=audio%2Fwebm&ns=fSdMGxLRQv9EdIACzJ_ZpdwF&gir=yes&clen=1970113&dur=134.501&lmt=1584127482573288&mt=1606548287&fvip=3&keepalive=yes&c=WEB&txp=5531432&n=r-NdxZWL888j7_xVDEn&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRQIhANWKIt5BEQF-soEXIruBLvz_51sO062pPgCcBpfX_-dhAiAPCxzQHf-GmXfpF3p9jLe824UsvU4lpPQXKW2akNWwNA%3D%3D&sig=AOq0QJ8wRgIhAKVZoVIrsrD0WDJVSyPtNy3aSKlVTjG-CzDvWo4WKeMPAiEApppP5-G0QHQewWca4zG8DTVq9I3p8jLv9pD3a6HJS2Q=', NULL, '2008-08-01', '2:15', 3964564);
 
 -- --------------------------------------------------------
 
@@ -104,7 +104,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `Username`, `email`, `contact`, `Pass`) VALUES
-(4, 'Shubham', 'shubham.mohapess@gma', 12345, '12345');
+(4, 'Shubham', 'shubham.mohapess@gma', 12345, '12345'),
+(7, 'chirag', 'casda@gmail.com', 123124141, '12345');
 
 --
 -- Indexes for dumped tables
@@ -120,7 +121,8 @@ ALTER TABLE `artist`
 -- Indexes for table `music`
 --
 ALTER TABLE `music`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`);
 
 --
 -- Indexes for table `user`
@@ -142,13 +144,13 @@ ALTER TABLE `artist`
 -- AUTO_INCREMENT for table `music`
 --
 ALTER TABLE `music`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=162;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=171;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
